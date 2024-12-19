@@ -5,7 +5,6 @@ import { FiSearch } from 'react-icons/fi';
 import { useState, ReactElement, useEffect } from 'react';
 import * as faIcons from 'react-icons/fa';
 import * as bsIcons from 'react-icons/bs';
-import { BsSnapchat, BsChat } from "react-icons/bs";
 import Tabs from './Tabs';
 import { usePathname } from 'next/navigation';
 import { useTheme } from 'next-themes';
