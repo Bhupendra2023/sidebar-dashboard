@@ -2,7 +2,7 @@
 import { SidebarToggleProps } from '@/lib/types';
 import { cn } from '@/lib/utils';
 import { FiSearch } from 'react-icons/fi';
-import { useState, ReactElement, useEffect } from 'react';
+import { useState, ReactElement } from 'react';
 import * as faIcons from 'react-icons/fa';
 import * as bsIcons from 'react-icons/bs';
 import Tabs from './Tabs';
@@ -12,7 +12,6 @@ import clsx from 'clsx';
 import { DARK, sidebarData, sidebarItems } from '@/constants';
 import { SidebarItemIcon, SidebarSection } from './SidebarSection';
 import Image from 'next/image';
-import useWindowSize from '@/hooks/useWindowSize';
 
 
 const SidebarToggle = ({ toggleSidebar, handleToggleSidebar, theme }: SidebarToggleProps): ReactElement => (
@@ -30,7 +29,6 @@ const SidebarToggle = ({ toggleSidebar, handleToggleSidebar, theme }: SidebarTog
 export default function Sidebar(): ReactElement {
   const [openSection, setOpenSection] = useState<string | null>(null);
   const [toggleSidebar, setToggleSidebar] = useState(false);
-  const { width } = useWindowSize();
 
   const toggleSection = (sectionName: string): void => {
     setOpenSection(openSection === sectionName ? null : sectionName);
@@ -43,13 +41,6 @@ export default function Sidebar(): ReactElement {
     setToggleSidebar((prev) => !prev);
   };
 
-  useEffect(() => {
-    if (width >= 900) {
-      setToggleSidebar(false);
-    } else {
-      setToggleSidebar(true);
-    }
-  }, [width]);
 
   return (
     <aside className="bg-background shadow-lg flex">
@@ -57,7 +48,7 @@ export default function Sidebar(): ReactElement {
         <SidebarToggle toggleSidebar={toggleSidebar} handleToggleSidebar={handleToggleSidebar} theme={theme} />
         <div className='flex flex-col justify-between '>
           <div className="flex flex-col gap-2 py-4">
-            {sidebarItems.map((item: any) => (
+            {sidebarItems.map((item) => (
               <div
                 key={item.id}
                 className="flex items-center hover:scale-[1.05] justify-center p-2 rounded-md text-heading hover:bg-secondary cursor-pointer"

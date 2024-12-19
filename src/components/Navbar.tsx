@@ -1,6 +1,5 @@
 "use client";
 
-import { FiSearch } from "react-icons/fi";
 import ThemeToggle from "./ThemeToggle";
 
 export default function Navbar() {
