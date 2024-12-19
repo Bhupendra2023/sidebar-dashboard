@@ -1,0 +1,25 @@
+@tailwind base;
+@tailwind components;
+@tailwind utilities;
+
+body {
+  @apply bg-gray-50  text-gray-800 font-manrope;
+}
+
+:root {
+  --bg-color: #ffffff;
+  --text-color: #1a1a1a;
+  --primary-color: #f4f4f6;
+  --secondary-color: #f4f4f6;
+  --main-content-color: #f1f1f1;
+  --sidebar-color: #eaeaea;
+}
+
+.dark {
+  --bg-color: #18171c;
+  --text-color: #ffffff;
+  --primary-color: #1c1b21;
+  --secondary-color: #46454a;
+  --main-content-color: #252529;
+  --sidebar-color: #18171D;
+}
